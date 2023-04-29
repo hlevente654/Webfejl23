@@ -1,0 +1,40 @@
+
+    <div *ngIf="!loadingImages" class="loading-indicator">
+        <mat-spinner></mat-spinner>
+        <p>Loading images...</p>
+      </div>
+      
+      <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+      <div class="card-grid" *ngIf="loadingImages">
+        <span fxLayoutGap="16px grid">
+          <span fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let product of products">
+            
+              <mat-card class="card">
+                <mat-card-header >
+                  <mat-card-title>{{ product.name |uppercase  }}</mat-card-title>
+                </mat-card-header>
+                <div class="card-img-container">
+                  <img mat-card-image class="cardImg" [src]="product.image_url"/>
+                </div>
+                <mat-card-content>
+                  <h3 >{{ product.price }}</h3>
+                </mat-card-content>
+                <mat-card-content>
+                  <p>{{ product.description }}</p>
+                </mat-card-content>
+
+                  <mat-card-actions>
+                    <button mat-raised-button color="primary" class="beletesz" type="submit" (click)="setDologNev(product.name)" >Kosárba tesz</button>
+                    <mat-form-field>
+                      <mat-label for="">Mennyiség:</mat-label>
+                      <input matInput type="number" min="0" formControlName="mennyiseg" />
+                    </mat-form-field>
+                  </mat-card-actions>
+                
+              </mat-card>
+            
+          </span>
+        </span>
+      </div>
+    </form>
+    

@@ -1,0 +1,15 @@
+<div id="page">
+    <!--TODO-->
+    <div id="page">
+        <div class="container">
+          {{email}}
+        </div>
+        <div class="container">
+          <h3>Kosar tartalma:</h3>
+          <div *ngFor="let kosarElem of KosarList">{{kosarElem}}</div>
+        </div>
+        <button mat-raised-button color="primary" (click)="clearKosar()" class="kosar-urites" type="submit">Kosár kiürítése</button>
+        <button mat-raised-button color="accent" (click)="clearKosar()" class="vasarlas" type="submit">Vásárlás</button>
+      </div>
+
+</div>

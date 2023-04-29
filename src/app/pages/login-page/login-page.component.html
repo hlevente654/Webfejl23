@@ -1,0 +1,29 @@
+
+<!--Login-->
+<div id="loginMain">
+    <div id="loginComponent">
+        <div id="innerLogin">
+            <h1>Bejelentkezés</h1>
+            <mat-form-field>
+                <mat-label for="">Email:</mat-label>
+                <input matInput type="text" [formControl]="email"/>
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label for="">Jelszó:</mat-label>
+                <input matInput type="password" [formControl]="jelszo"/>
+            </mat-form-field>
+            <br>
+            <span>
+                <span><button mat-raised-button color="primary" (click)="bejelentkezes()">Bejelentkezés</button></span>
+                <span><button mat-raised-button [routerLink]="'/register-page'">Mégse</button></span>
+            </span>
+        </div>
+
+    </div>
+    
+</div>
+
+<span *ngIf="loading">
+    <mat-spinner></mat-spinner>
+</span>

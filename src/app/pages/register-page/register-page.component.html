@@ -1,0 +1,31 @@
+
+<div id="register-block">
+    <div class="register-box">
+        
+        <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+            <h1>Regisztráció</h1>
+            <mat-form-field>
+                <mat-label>Email:</mat-label>
+                <input matInput formControlName="email" type="text">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Jelszó:</mat-label>
+                <input matInput formControlName="jelszo" type="password">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Jelszó megerősítése:</mat-label>
+                <input matInput formControlName="jelszoEr" type="password">
+            </mat-form-field>
+            <div>
+                <span>
+                    <button mat-raised-button color="primary" type="submit">Regisztráció</button>
+                </span>
+                <span>
+                    <button mat-raised-button (click)="vissza()">Mégse</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>

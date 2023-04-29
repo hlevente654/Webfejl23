@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "webkert-23": {
+      "hosting": {
+        "Csempebolt": [
+          "webkert-23"
+        ]
+      }
+    },
+    "webkert-23-e0a44": {
+      "hosting": {
+        "Csempebolt": [
+          "webkert-23-e0a44"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webkert-23-e0a44"
+  }
+}

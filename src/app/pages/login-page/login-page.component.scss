@@ -1,0 +1,20 @@
+#loginMain{
+    height: 70%;
+}
+#loginComponent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    
+}
+
+#innerLogin{
+    display: inline-grid;
+    background-color: gray;
+    width: 50%;
+    text-align: center;
+    align-self: center;
+    border-radius: 25px 25px;
+}

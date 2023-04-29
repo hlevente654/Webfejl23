@@ -1,0 +1,43 @@
+
+                
+<mat-sidenav-container style="height: 100%;">
+    <mat-sidenav #sidenav>
+        
+        <shop-menu (selectedPage)="oldalValtas($event)" [currentPage]="page" *ngIf="page" (onCloseSidenav)="bezarason($event, sidenav)" [loggedInUser]="loggedInUser" (onLogout)="kijelentkezes($event)"></shop-menu>
+    </mat-sidenav>
+    <mat-sidenav-container>
+        <mat-toolbar color="primary" class="mainMenu">
+            <div >
+                <button mat-icon-button (click)="oldalbarKapcs(sidenav)">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
+            <div id="menuCim">Csempebolt</div>
+            <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+                <ul fxLayout fxLayoutGap="20px" class="navigation-items mainManu">
+                    <li *ngIf="!(loggedInUser)"> <a [ngStyle]="{'background-color': backgroundColor}"
+                        (mouseenter)="onMouseEnter()"
+                        (mouseleave)="onMouseLeave()" routerLink="/login-page">Bejelentkezés</a> </li>
+                        
+                    <li *ngIf="loggedInUser"> <a [ngStyle]="{'background-color': backgroundColor}"
+                        (mouseenter)="onMouseEnter()"
+                        (mouseleave)="onMouseLeave()" routerLink="/login-page" (click)="kijelentkezes()">Kijelentkezés</a> </li>
+                    <li *ngIf="!(loggedInUser)"> <a [ngStyle]="{'background-color': backgroundColor}"
+                        (mouseenter)="onMouseEnter()"
+                        (mouseleave)="onMouseLeave()" routerLink="/register-page">Regisztrálás</a> </li>
+                    <li *ngIf="loggedInUser"> <a [ngStyle]="{'background-color': backgroundColor}"
+                        (mouseenter)="onMouseEnter()"
+                        (mouseleave)="onMouseLeave()" routerLink="/products-page">Termékek</a> </li>
+                    <li *ngIf="loggedInUser"> <a [ngStyle]="{'background-color': backgroundColor}"
+                        (mouseenter)="onMouseEnter()"
+                        (mouseleave)="onMouseLeave()" routerLink="/user-page">Kosár</a> </li>
+                </ul>
+            </div>
+        </mat-toolbar>
+        
+    </mat-sidenav-container>
+    <router-outlet></router-outlet>
+</mat-sidenav-container>
+
+
+
