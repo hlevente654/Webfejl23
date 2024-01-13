@@ -1,6 +1,5 @@
 # Csempebolt
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
+Egy Angular + Firebase segítségével elkészített weboldal.
 
 ## Development server
 Iskolai projekt a Webfejlesztési keretrendszerek órára. (2022)
